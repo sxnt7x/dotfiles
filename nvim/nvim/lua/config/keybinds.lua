@@ -1,6 +1,6 @@
 -- Yank to clipboard
-vim.keymap.set({ "v", "n" }, "<leader>y", [["*y]])
-vim.keymap.set("n", "<leader>Y", [["*Y]])
+vim.keymap.set({ "v", "n" }, "<leader>y", [["*y]], { desc = "Yank to clipboard" })
+vim.keymap.set({ "v", "n" }, "<leader>Y", [["*Y]], { desc = "Yank line to clipboard" })
 
 -- Neotree setup
 vim.keymap.set("n", "<leader>e", function() vim.cmd("Neotree toggle") end, { desc = "File explorer" })
@@ -18,4 +18,5 @@ vim.keymap.set("n", "<leader>fh", telescope.help_tags, { desc = "Help tags" })
 vim.keymap.set("n", "L", vim.cmd.bnext, { desc = "Go to next buffer" })
 vim.keymap.set("n", "H", vim.cmd.bprevious, { desc = "Go to previous buffer" })
 
-vim.keymap.set("n", "<leader>b", vim.cmd.bdelete, { desc = "Close buffer" })
+vim.keymap.set("n", "<leader>bd", vim.cmd.bdelete, { desc = "Close buffer" })
+vim.keymap.set("n", "<leader>bw", vim.cmd("bw"), { desc = "Wipeout buffer" })

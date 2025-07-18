@@ -33,6 +33,6 @@ return {
 
         vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end, { desc = "Open Harpoon" })
 
-        vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+        vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end, { desc = "Add file into harpoon" })
     end
 }
