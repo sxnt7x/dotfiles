@@ -1,0 +1,2 @@
+# Fastfetch
+My fastfetch configuration
