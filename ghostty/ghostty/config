@@ -1,0 +1,10 @@
+font-family = Hack Nerd Font Mono
+font-size = 14
+
+theme = OneHalfDark
+background-opacity = 0.97
+background-blur-radius = 30
+
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor

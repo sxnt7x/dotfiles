@@ -1,0 +1,95 @@
+format = """
+[](#ffffff)\
+$os\
+$username\
+[](fg:#ffffff bg:blue)\
+$directory\
+[](fg:blue bg:green)\
+$git_branch\
+[](fg:green bg:yellow)\
+$git_status\
+[](yellow)\ 
+$fill\
+[](red)\
+$rust\
+[](fg:blue bg:red)\
+$python\
+[](fg:purple bg:blue)\
+$time\
+$cmd_duration\
+[](purple)\
+$line_break\
+$character"""
+
+[fill]
+symbol = " "
+
+[os]
+disabled = false
+style = "fg:black bg:#ffffff"
+
+[os.symbols]
+Macos = ""
+Arch = "󰣇"
+
+[username]
+show_always = true
+style_user = "bold fg:black bg:#ffffff"
+style_root = "bold fg:black bg:#ffffff"
+format = "[ $user ]($style)"
+
+[directory]
+style = "bold fg:#ffffff bg:blue"
+format = "[ $path ]($style)"
+truncation_symbol = "../"
+
+[directory.substitutions]
+".config" = ""
+
+[git_branch]
+style = "fg:#ffffff bg:green"
+symbol = ""
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "fg:#452d00 bg:yellow"
+format = "([ $all_status$ahead_behind ]($style))"
+
+[rust]
+style = "bold fg:#ffffff bg:red"
+symbol = ""
+format = "[ ${symbol} (${version}) ]($style)"
+detect_extensions = ["rs"]
+detect_files = ["Cargo.toml"]
+
+[python]
+style = "bold fg:#ffffff bg:blue"
+symbol = ""
+format = "[ ${symbol} (${version}) ]($style)"
+detect_extensions = ["py", "ipynb"]
+detect_files = [
+  "requirements.txt",
+  ".python-version",
+  "pyproject.toml",
+  "Pipfile",
+  "tox.ini",
+  "setup.py",
+  "__init__.py",
+]
+
+[character]
+disabled = false
+success_symbol = '[\$](bold green)'
+error_symbol = '[\$](bold red)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "fg:#ffffff bg:purple"
+format = "[  $time ]($style)"
+
+[cmd_duration]
+min_time = 2000
+show_milliseconds = false
+style = "fg:#ffffff bg:purple"
+format = "[$duration ]($style)"
