@@ -18,9 +18,6 @@ vim.opt.scrolloff = 8
 require("config.lazy")
 require("config.keybinds")
 
--- Nice relative number line color
-
-
 -- So 'notify' doesn't complain
 require("notify").setup({
     background_colour = "#000000",
