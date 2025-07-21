@@ -7,7 +7,10 @@ export PATH="$PATH:/Applications/Ghostty.app/Contents/MacOS"
 
 alias wttr="http wttr.in"
 
-
+export NVIMCFG="$HOME/.dotfiles/nvim/nvim"
+export YAZICFG="$HOME/.dotfiles/yazi/yazi"
+export GHOSTTYCFG="$HOME/.dotfiles/ghostty/ghostty"
+export STARSHIPCFG="$HOME/.dotfiles/starship/starship"
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -30,12 +33,6 @@ function y() {
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -101,38 +98,6 @@ plugins=(git web-search zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch $(uname -m)"
-
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 export PATH='/Users/Santi/.cargo/bin:/opt/homebrew/bin:/Library/Frameworks/Python.framework/Versions/3.13/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/usr/local/share/dotnet:~/.dotnet/tools:/opt/homebrew/bin:/Library/Frameworks/Python.framework/Versions/3.13/bin:/Users/Santi/.cargo/bin:/Users/Santi/Developer/flutter/bin:/Users/Santi/Library/Python/3.13/bin:/Users/Santi/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/Santi/Developer/flutter/bin:/Users/Santi/Library/Python/3.13/bin'
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -145,3 +110,6 @@ export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+eval "$(zoxide init zsh)"
+alias cd="z"

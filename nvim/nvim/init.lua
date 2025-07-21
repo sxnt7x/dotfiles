@@ -18,6 +18,8 @@ vim.opt.scrolloff = 8
 require("config.lazy")
 require("config.keybinds")
 
+vim.diagnostic.config({ virtual_text = true })
+
 -- So 'notify' doesn't complain
 require("notify").setup({
     background_colour = "#000000",

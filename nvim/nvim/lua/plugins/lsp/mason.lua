@@ -1,4 +1,5 @@
-return { "mason-org/mason.nvim",
+return {
+    "mason-org/mason.nvim",
     dependencies = {
         "mason-org/mason-lspconfig.nvim",
     },
@@ -23,6 +24,7 @@ return { "mason-org/mason.nvim",
                 "jsonls",
                 "pyright",
                 "lua_ls",
+                "rust_analyzer",
             }
         })
     end

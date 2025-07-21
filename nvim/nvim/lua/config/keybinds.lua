@@ -18,5 +18,8 @@ vim.keymap.set("n", "<leader>fh", telescope.help_tags, { desc = "Help tags" })
 vim.keymap.set("n", "L", vim.cmd.bnext, { desc = "Go to next buffer" })
 vim.keymap.set("n", "H", vim.cmd.bprevious, { desc = "Go to previous buffer" })
 
+-- So I can exit the terminal nicely
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
 vim.keymap.set("n", "<leader>bd", vim.cmd.bdelete, { desc = "Close buffer" })
-vim.keymap.set("n", "<leader>bw", vim.cmd("bw"), { desc = "Wipeout buffer" })
+vim.keymap.set("n", "<leader>bw", function() vim.cmd("bw") end, { desc = "Wipeout buffer" })
