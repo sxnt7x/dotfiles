@@ -15,9 +15,11 @@ while true; do
     read -p "(Y-n)" opt
 
     if [[ "$opt" == "" || "$opt" == "y" ]]; then
+        echo "Installing dependencies..."
         # Install dependencies
-        brew install nvim starship fastfetch gh yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick font-symbols-only-nerd-font stow
+        brew install nvim starship fastfetch gh yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick font-symbols-only-nerd-font stow tmux
         brew install --cask ghostty
+        echo "Done"
         break
     elif [[ "$opt" == "n" ]]; then
         break
@@ -37,6 +39,7 @@ stow -t ~/.config fastfetch
 stow -t ~/.config yazi
 stow -t ~/.config gh
 stow -t ~ zsh
+stow -t ~ tmux
 
 echo "Done"
 echo "Enjoy your setup!"

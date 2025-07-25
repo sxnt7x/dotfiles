@@ -68,12 +68,20 @@ return {
             on_attach = on_attach,
         })
 
-        -- lspconfig["bashls"].setup({
-        --     capabilities = capabilities,
-        --     on_attach = on_attach,
-        -- })
+        lspconfig["bashls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
 
         lspconfig["rust_analyzer"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = {
+                checkOnSave = { command = "clippy" }
+            }
+        })
+
+        lspconfig["gopls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
