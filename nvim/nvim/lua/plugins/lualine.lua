@@ -2,7 +2,7 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function ()
-        local a = require("lualine.themes.auto")
+        local a = require("lualine.themes.onedark")
         a.normal.c.bg = "None"
         require("lualine").setup({
             options = {
@@ -19,6 +19,7 @@ return {
                 lualine_x = {},
                 lualine_y = { 'filetype', 'progress' },
                 lualine_z = {
+
                     { 'location', separator = { left = "", right = '' }, left_padding = 2 },
                 },
             },
