@@ -113,3 +113,14 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 eval "$(zoxide init zsh)"
 alias cd="z"
+
+function chrome_new_window() {
+    if ! pgrep "Google Chrome" > /dev/null; then
+        open -a "Google Chrome"
+    else
+        osascript -e 'tell application "Google Chrome" to make new window'
+    fi
+}
+
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"

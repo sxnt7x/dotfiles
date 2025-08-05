@@ -8,9 +8,11 @@ $directory\
 $git_branch\
 [](fg:green bg:yellow)\
 $git_status\
-[](yellow)\ 
+[](yellow)\
 $fill\
-[](red)\
+[](#79d4fd)\
+$golang\
+[](fg:red bg:#79d4fd)\
 $rust\
 [](fg:blue bg:red)\
 $python\
@@ -20,6 +22,7 @@ $cmd_duration\
 [](purple)\
 $line_break\
 $character"""
+command_timeout = 2000
 
 [fill]
 symbol = " "
@@ -69,12 +72,26 @@ format = "[ ${symbol} (${version}) ]($style)"
 detect_extensions = ["py", "ipynb"]
 detect_files = [
   "requirements.txt",
-  ".python-version",
   "pyproject.toml",
   "Pipfile",
   "tox.ini",
   "setup.py",
   "__init__.py",
+]
+
+[golang]
+disabled = false
+style = "bold fg:#ffffff bg:#79d4fd"
+symbol = ""
+format = "[ ${symbol} (${version}) ]($style)"
+detect_extensions = [ ".go" ]
+detect_files = [
+    "go.mod",
+    "go.sum",
+    "go.work",
+    "glide.yaml",
+    "Gopkg.yml",
+    "Gopkg.lock",
 ]
 
 [character]
