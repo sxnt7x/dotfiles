@@ -16,18 +16,37 @@ return {
 
         local conf = require("telescope.config").values
         local function toggle_telescope(harpoon_files)
-            local file_paths = {}
-            for _, item in ipairs(harpoon_files.items) do
-                table.insert(file_paths, item.value)
+            local function finder()
+                local file_paths = {}
+                for _, item in ipairs(harpoon_files.items) do
+                    table.insert(file_paths, item.value)
+                end
+
+                return require("telescope.finders").new_table({
+                    results = file_paths
+                })
             end
 
             require("telescope.pickers").new({}, {
                 prompt_title = "Harpoon",
-                finder = require("telescope.finders").new_table({
-                    results = file_paths,
-                }),
+                finder = finder(),
                 previewer = conf.file_previewer({}),
-                sorter = conf.generic_sorter({})
+                sorter = conf.generic_sorter({}),
+                attach_mappings = function(bufnr, map)
+                    map(
+                        "i",
+                        "<C-d>",
+                        function()
+                            local state = require("telescope.actions.state")
+                            local selected_entry = state.get_selected_entry()
+                            local current_picker = state.get_current_picker(bufnr)
+
+                            harpoon:list():remove_at(selected_entry.index)
+                            current_picker:refresh(finder())
+                        end
+                    )
+                    return true
+                end
             }):find()
         end
 
