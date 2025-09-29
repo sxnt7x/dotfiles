@@ -11,5 +11,5 @@ return {
         require("onedarkpro").setup(opts)
         vim.cmd.colorscheme("onedark")
       end,
-    }  
+    }
 }

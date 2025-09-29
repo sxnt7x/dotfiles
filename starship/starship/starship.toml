@@ -10,11 +10,11 @@ $git_branch\
 $git_status\
 [](yellow)\
 $fill\
-[](#79d4fd)\
-$golang\
-[](fg:red bg:#79d4fd)\
+[](red)\
 $rust\
-[](fg:blue bg:red)\
+[](fg:#f7a41e bg:red)\
+$zig\
+[](fg:blue bg:#f7a41e)\
 $python\
 [](fg:purple bg:blue)\
 $time\
@@ -79,19 +79,15 @@ detect_files = [
   "__init__.py",
 ]
 
-[golang]
+[zig]
 disabled = false
-style = "bold fg:#ffffff bg:#79d4fd"
-symbol = ""
+style = "bold fg:#ffffff bg:#f7a41e"
+symbol = ""
 format = "[ ${symbol} (${version}) ]($style)"
-detect_extensions = [ ".go" ]
+detect_extensions = [ ".zig" ]
 detect_files = [
-    "go.mod",
-    "go.sum",
-    "go.work",
-    "glide.yaml",
-    "Gopkg.yml",
-    "Gopkg.lock",
+    "build.zig",
+    "build.zig.zon",
 ]
 
 [character]
